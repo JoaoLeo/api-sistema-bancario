@@ -1,7 +1,7 @@
 import { BaseSchema } from '@adonisjs/lucid/schema'
 
 export default class extends BaseSchema {
-  protected tableName = 'movimentacoes'
+  protected tableName = 'movimentacaos'
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
@@ -23,7 +23,7 @@ export default class extends BaseSchema {
       table
       .foreign('tipo_id')
       .references('id')
-      .inTable('tipo_movimentacoes')
+      .inTable('tipo_movimentacaos')
 
     })
   }
