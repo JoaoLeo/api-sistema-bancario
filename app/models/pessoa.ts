@@ -1,13 +1,22 @@
-import { DateTime } from 'luxon'
 import { BaseModel, column } from '@adonisjs/lucid/orm'
 
 export default class Pessoa extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
-  @column.dateTime({ autoCreate: true })
-  declare createdAt: DateTime
+  @column()
+  declare nome: string
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  declare updatedAt: DateTime
+  @column()
+  declare dataNascimento: Date
+
+  @column()
+  declare cpf: string
+
+  @column()
+  declare email: string
+
+  @column()
+  declare telefone: string
+
 }

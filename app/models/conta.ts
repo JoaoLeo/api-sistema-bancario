@@ -1,13 +1,24 @@
-import { DateTime } from 'luxon'
 import { BaseModel, column } from '@adonisjs/lucid/orm'
 
 export default class Conta extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
-  @column.dateTime({ autoCreate: true })
-  declare createdAt: DateTime
+  @column()
+  declare pessoaId: number
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  declare updatedAt: DateTime
+  @column()
+  declare tipoId: number
+
+  @column()
+  declare dataAbertura: Date
+
+  @column()
+  declare numero: string
+
+  @column()
+  declare agencia: string
+  
+  @column()
+  declare saldo: number
 }
