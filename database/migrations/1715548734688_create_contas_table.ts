@@ -7,6 +7,7 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.integer('pessoa_id').unsigned().notNullable()
+      table.integer('empresa_id').unsigned().nullable()
       table.integer('tipo_id').unsigned().notNullable()
       table.date('data_abertura').notNullable()
       table.string('numero', 100).notNullable()
@@ -18,6 +19,12 @@ export default class extends BaseSchema {
       .foreign('pessoa_id')
       .references('id')
       .inTable('pessoas')
+
+
+      table
+      .foreign('empresa_id')
+      .references('id')
+      .inTable('empresas')
 
       table
       .foreign('tipo_id')

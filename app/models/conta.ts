@@ -8,6 +8,9 @@ export default class Conta extends BaseModel {
   declare pessoaId: number
 
   @column()
+  declare empresaId: number
+
+  @column()
   declare tipoId: number
 
   @column()
